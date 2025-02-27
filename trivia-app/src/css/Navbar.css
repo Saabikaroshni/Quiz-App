@@ -1,0 +1,23 @@
+.navbar{
+    background-color: cadetblue;
+    color: antiquewhite;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+    font-size: larger;
+    text-decoration: none;
+}
+.nav-links a {
+    color: antiquewhite;
+    text-decoration: none;
+    
+    padding: 20px;
+    font-size: larger;
+
+  }
+  
+  .nav-links a:hover {
+    background-color: rgb(23, 109, 112); 
+    text-decoration: none;
+    
+  }
