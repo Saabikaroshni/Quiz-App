@@ -22,7 +22,7 @@ const Signup = () => {
 
   return (
     <div className="form-container">
-      <h3>Forms</h3>
+      <h3>Sign Up</h3>
       <form onSubmit={handleSubmit}>
         <table>
           <tbody>

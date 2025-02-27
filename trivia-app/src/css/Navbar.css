@@ -1,16 +1,19 @@
 .navbar{
+    /*background-color: rgb(95, 160, 139);*/
     background-color: cadetblue;
     color: antiquewhite;
     display: flex;
-    justify-content:space-between ;
+    justify-content:space-around ;
     align-items: center;
     font-size: larger;
     text-decoration: none;
+    list-style-type:none;
+    height: 100px;
 }
 .nav-links a {
     color: antiquewhite;
     text-decoration: none;
-    
+
     padding: 20px;
     font-size: larger;
 
@@ -20,4 +23,7 @@
     background-color: rgb(23, 109, 112); 
     text-decoration: none;
     
+  }
+  h1{
+    font-size: 60px;
   }
