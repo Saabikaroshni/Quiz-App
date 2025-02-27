@@ -27,7 +27,7 @@
 
 
 
-/* Selected option */
+
 .quiz-container .skip-btn {
     background-color: #4caf50 ;
   
@@ -37,7 +37,7 @@
 
 
 
-/* Scope buttons inside .quiz-container */
+
 .quiz-container button {
     padding: 10px 20px;
     font-size: 16px;
@@ -47,7 +47,7 @@
     margin: 5px;
 }
 
-/* Hover effect for buttons */
+
 .quiz-container button:hover {
     opacity: 1;
 }
