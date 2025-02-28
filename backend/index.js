@@ -5,7 +5,7 @@ const app = express();
 const PORT = 3001;
 dotenv.config()
 mdb
-  .connect(process.env.MONGODB_URL)
+  .connect("mongodb+srv://saabikaroshni:saabi2684@sjitmern2025.mytil.mongodb.net/Trivia-app")
   .then(() => {
     console.log("MBD sucess");
   })
@@ -14,7 +14,7 @@ mdb
   });
 
 app.get("/", (req, res) => {
-  res.send("<h1>welcome back<h1>");
+  res.send("<h1>welcome back to backend<h1>");
 });
 // app.get("/static", (req, res) => {
 //   res.sendFile(
