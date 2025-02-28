@@ -7,7 +7,7 @@ const PORT = 3001;
 dotenv.config()
 app.use(express.json());
 mdb
-  .connect(process.env.MONGODB_URL)
+  .connect("mongodb+srv://saabikaroshni:saabi2684@sjitmern2025.mytil.mongodb.net/Trivia-app")
   .then(() => {
     console.log("MBD sucess");
   })
