@@ -8,21 +8,31 @@ function login() {
   const navigate = useNavigate();
   const [password, setPass] = useState("");
   const [email, setEmail] = useState("");
+  const API_BASE_URL = "https://quiz-app-y65p.onrender.com";
+
   const handleLogin = async (event) => {
     event.preventDefault();
-    const req = await axios.post("http://localhost:3001/login", {
-      email: email,
-      password: password,
-    });
-    const message = req.data.message;
-    const isLoggedin = req.data.isLoggedin;
-    if (isLoggedin) {
-      alert(message);
-      navigate("/home");
-    } else {
-      alert(message);
+    try {
+      const req = await axios.post(`${API_BASE_URL}/login`, {
+        email: email,
+        password: password,
+      });
+  
+      console.log("Server Response:", req.data); // Debugging
+  
+      if (req.data.isLoggedin) {
+        alert(req.data.message);
+        navigate("/home");
+      } else {
+        alert(req.data.message);
+      }
+    } catch (error) {
+      console.error("Login Error:", error.response ? error.response.data : error.message);
+      alert("Login failed. Please check your connection.");
     }
   };
+  
+  
   return (
     <div className="form-container">
       <h3>Login</h3>

@@ -24,8 +24,10 @@ const App = () => {
       <div className="page-container">
       <Routes>
       
-        <Route path="/home" element={<Home />} />
         
+      
+        
+        <Route path="/home" element={<Home />} />
         <Route path="/" element={<Signup/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/congratulations" element={<Congratulations/>}></Route>
