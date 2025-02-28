@@ -5,7 +5,7 @@ const app = express();
 const PORT = 3001;
 dotenv.config()
 mdb
-  .connect("mongodb://127.0.0.1:27017/Trivia-app")
+  .connect(process.env.MONGODB_URL)
   .then(() => {
     console.log("MBD sucess");
   })
