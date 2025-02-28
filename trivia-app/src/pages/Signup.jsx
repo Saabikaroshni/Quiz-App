@@ -14,7 +14,7 @@ function Signup() {
 
   const handleSignup = async (event) => {
     event.preventDefault();
-    const req = await axios.post("http://localhost:3001/Signup", {
+    const req = await axios.post("http://localhost:3001/signup", {
       firstName: firstName,
       lastName: lastName,
       email: email,
@@ -22,7 +22,7 @@ function Signup() {
       phoneNumber: phoneNumber,
     });
     const message = req.data.message;
-    const isSignup = req.data.isSignUp;
+    const isSignup = req.data.isSignup;
     if (isSignup) {
       alert(message);
       navigate("/login");
