@@ -1,11 +1,13 @@
 const express = require("express");
 const mdb = require("mongoose");
 const dotenv=require('dotenv')
+const Signup = require("./models/signupSchema");
 const app = express();
 const PORT = 3001;
 dotenv.config()
+app.use(express.json());
 mdb
-  .connect("mongodb+srv://saabikaroshni:saabi2684@sjitmern2025.mytil.mongodb.net/Trivia-app")
+  .connect(process.env.MONGODB_URL)
   .then(() => {
     console.log("MBD sucess");
   })
@@ -16,10 +18,26 @@ mdb
 app.get("/", (req, res) => {
   res.send("<h1>welcome back to backend<h1>");
 });
-// app.get("/static", (req, res) => {
-//   res.sendFile(
-//     "C:\\Users\\joans\\OneDrive\\Documents\\desktop\\mern\\html_css\\index.html"
-//   );
-// });
+app.post("/signup",(req,res)=>{
+    try {
+        const {firstName,lastName,email,password,phoneNumber}=req.body
+    const newSignup=new Signup({
+        firstName: firstName,
+        lastName: lastName,
+        
+        password: password,
+        email: email,
+        phoneNumber: phoneNumber,
+        
+    });
+    newSignup.save()
+    console.log("signup sucess")
+    res.status(201).json({message:"Signup Successfull",isSignup:true})
+        
+    } catch (error) {
+        res.status(201).json({message:"Signup UnSuccessfull",isSignup:false})
+    }
+
+});
 
 app.listen(PORT, () => console.log("server started successfully"));
