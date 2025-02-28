@@ -1,60 +1,115 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import "../css/Signup.css";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import '../css/Signup.css'
 
-const Signup = () => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "@gmail.com",
-    password: "",
-    phoneNumber: ""
-  });
+function Signup() {
+  const navigate = useNavigate();
+  const [firstName, setFN] = useState("");
+  const [lastName, setLN] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPass] = useState("");
+  const [phoneNumber, setPN] = useState(0);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted", formData);
+  const handleSignup = async (event) => {
+    event.preventDefault();
+    const req = await axios.post("http://localhost:3001/Signup", {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password,
+      phoneNumber: phoneNumber,
+    });
+    const message = req.data.message;
+    const isSignup = req.data.isSignUp;
+    if (isSignup) {
+      alert(message);
+      navigate("/login");
+    } else {
+      alert(message);
+    }
   };
 
   return (
     <div className="form-container">
-      <h3>Sign Up</h3>
-      <form onSubmit={handleSubmit}>
+      <h3>Signup</h3>
+      <form onSubmit={handleSignup}>
         <table>
           <tbody>
             <tr>
-              <td><label>First name:</label></td>
-              <td><input type="text" name="firstName" placeholder="Enter first name" required onChange={handleChange} /></td>
+              <td><label htmlFor="firstName">First Name:</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="firstName"
+                  value={firstName}
+                  onChange={(e) => setFN(e.target.value)}
+                  required
+                />
+              </td>
             </tr>
             <tr>
-              <td><label>Last name:</label></td>
-              <td><input type="text" name="lastName" placeholder="Enter Last name" required onChange={handleChange} /></td>
+              <td><label htmlFor="lastName">Last Name:</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="lastName"
+                  value={lastName}
+                  onChange={(e) => setLN(e.target.value)}
+                  required
+                />
+              </td>
             </tr>
             <tr>
-              <td><label>Email:</label></td>
-              <td><input type="email" name="email" value={formData.email} required onChange={handleChange} /></td>
+              <td><label htmlFor="email">Email:</label></td>
+              <td>
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </td>
             </tr>
             <tr>
-              <td><label>Password:</label></td>
-              <td><input type="password" name="password" placeholder="Enter your Password" required onChange={handleChange} /></td>
+              <td><label htmlFor="password">Password:</label></td>
+              <td>
+                <input
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPass(e.target.value)}
+                  required
+                />
+              </td>
             </tr>
             <tr>
-              <td><label>Mobile number:</label></td>
-              <td><input type="tel" name="phoneNumber" placeholder="Enter your Phone number" required onChange={handleChange} /></td>
+              <td><label htmlFor="phoneNumber">Phone Number:</label></td>
+              <td>
+                <input
+                  type="number"
+                  id="phoneNumber"
+                  value={phoneNumber}
+                  onChange={(e) => setPN(parseInt(e.target.value))}
+                  required
+                />
+              </td>
             </tr>
             <tr>
-              <td><button type="submit">Sign Up</button></td>
+              <td colSpan="2" style={{ textAlign: "center" }}>
+                <button type="submit">Sign Up</button>
+              </td>
             </tr>
           </tbody>
         </table>
       </form>
-      <p>Already have an account? <Link to="/login">Login</Link></p>
+      <p>
+        Already have an account? <Link to="/login">Login</Link>
+      </p>
     </div>
   );
-};
+}
 
 export default Signup;
