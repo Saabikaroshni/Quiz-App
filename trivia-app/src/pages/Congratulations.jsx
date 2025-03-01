@@ -6,7 +6,7 @@ const Congratulations = () => {
     <div className="congrats-container">
       <h1>🎉 Congratulations! 🎉</h1>
       <p>You have successfully completed the quiz!</p>
-      <Link to="/" className="home-btn">Go to Home</Link>
+      <Link to="/home" className="home-btn">Go to Home</Link>
     </div>
   );
 };

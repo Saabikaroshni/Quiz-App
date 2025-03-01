@@ -1,0 +1,95 @@
+/* Full-page container with animated gradient background */
+.open-page {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 91vh; /* Full viewport height */
+    width: 103vw; /* Full viewport width */
+    background: linear-gradient(-45deg,cadetblue,rgb(25, 104, 118),cadetblue);
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s ease infinite;
+    margin: 0;
+    border-radius: 10px;
+  }
+  
+  /* Gradient Animation */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Content Box */
+  .content {
+    text-align: center;
+    color: antiquewhite;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Header Text */
+  h1 {
+    font-size: 3rem;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 10px;
+  }
+  
+  h1 span {
+    color: #ffcc70;
+  }
+  
+  /* Description Text */
+  p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+  
+  /* Buttons */
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .btn {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Signup Button */
+  .signup {
+    background: #28a745;
+    color: antiquewhite;
+    border: 2px solid #28a745;
+  }
+  
+  .signup:hover {
+    background: transparent;
+    color: #28a745;
+  }
+  
+  /* Login Button */
+  .login {
+    background: #007bff;
+    color: antiquewhite;
+    border: 2px solid #007bff;
+  }
+  
+  .login:hover {
+    background: transparent;
+    color: #007bff;
+  }
+  

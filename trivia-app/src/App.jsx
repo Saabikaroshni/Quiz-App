@@ -14,6 +14,7 @@ import Natures from './quiz/Natures';
 import Science from './quiz/Science';
 import Sports from './quiz/Sports';
 import Technology from './quiz/Technology';
+import Openpage from './pages/Openpage';
 
 import "./App.css";
 
@@ -28,7 +29,8 @@ const App = () => {
       
         
         <Route path="/home" element={<Home />} />
-        <Route path="/" element={<Signup/>}></Route>
+        <Route path="/signup" element={<Signup/>}></Route>
+        <Route path="/" element={<Openpage/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/congratulations" element={<Congratulations/>}></Route>
         <Route path="/quiz/nature" element={<Natures/>}></Route>
