@@ -6,7 +6,7 @@ const cors = require("cors");
 const Signup = require("./models/signupSchema");
 
 const app = express();
-app.usapp.use(cors());
+app.use(cors({origin:"https://quiz-app-five-beige.vercel.app/"}));
 app.use(express.json());
 
 const PORT = 3001;

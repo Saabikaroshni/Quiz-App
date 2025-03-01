@@ -9,9 +9,9 @@ const Navbar = () => {
         <h1>Trivia App</h1>
       </div>
       <div className="nav-links">
-        <Link to="/">Home</Link>
+        <Link to="/home">Home</Link>
         <Link to="/leaderboard">Leaderboard</Link>
-        <Link to="/signup">Logout</Link>
+        <Link to="/">Logout</Link>
       </div>
     </nav>
   );
