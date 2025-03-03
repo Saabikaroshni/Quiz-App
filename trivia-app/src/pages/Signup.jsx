@@ -14,6 +14,7 @@ function Signup() {
 
   const handleSignup = async (event) => {
     event.preventDefault();
+    //const req = await axios.post("https://quiz-app-y65p.onrender.com/signup", {
     const req = await axios.post("http://localhost:3001/signup", {
       firstName: firstName,
       lastName: lastName,

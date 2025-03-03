@@ -14,6 +14,7 @@ const OpenPage = () => {
         <div className="buttons">
           <Link to="/signup" className="btn signup">Sign Up</Link>
           <Link to="/login" className="btn login">Login</Link>
+          <Link to="/home" className="btn login">Play as guest</Link>
         </div>
       </div>
     </div>
