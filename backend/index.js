@@ -25,9 +25,7 @@ app.get("/", (req, res) => {
   res.send("<h1>Welcome back</h1>");
 });
 
-app.get("/static", (req, res) => {
-  res.sendFile("C:\\Users\\joans\\OneDrive\\Documents\\desktop\\mern\\html_css\\index.html");
-});
+
 
 app.post("/signup", async (req, res) => {
   try {
