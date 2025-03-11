@@ -73,23 +73,29 @@
   .signup {
     background: #28a745;
     color: antiquewhite;
-    border: 2px solid #28a745;
+    border: 2px solid #dede0a;
   }
   
   .signup:hover {
     background: transparent;
-    color: #28a745;
+   
   }
   
   /* Login Button */
   .login {
     background: #007bff;
     color: antiquewhite;
-    border: 2px solid #007bff;
+    border: 2px solid #dede0a;
   }
   
   .login:hover {
     background: transparent;
-    color: #007bff;
+    
+    
+  }
+  .guest{
+    background: #6c6c28;
+    color: antiquewhite;
+    border: 2px solid #dede0a;
   }
   

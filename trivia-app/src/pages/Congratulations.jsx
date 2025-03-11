@@ -1,12 +1,17 @@
-import { Link } from "react-router-dom";
-import "../css/congratulations.css";
+import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Congratulations = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { finalScore, message } = location.state || { finalScore: 0, message: "Good Try!" };
+
+
   return (
-    <div className="congrats-container">
-      <h1>🎉 Congratulations! 🎉</h1>
-      <p>You have successfully completed the quiz!</p>
-      <Link to="/home" className="home-btn">Go to Home</Link>
+    <div className="quiz-container">
+      <h2>{message} 🎉</h2>
+      <h3>Your Final Score: {finalScore}/3</h3>
+      <button onClick={() => navigate("/home")}>Play Again</button>
     </div>
   );
 };

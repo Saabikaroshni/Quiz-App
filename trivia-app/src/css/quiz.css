@@ -52,4 +52,27 @@
     opacity: 1;
 }
 
+.option-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background 0.3s ease-in-out;
+}
 
+.option-btn.correct {
+    background-color: green;
+    color: white;
+}
+
+.option-btn.wrong {
+    background-color: red;
+    color: white;
+}
+
+.option-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

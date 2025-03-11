@@ -3,7 +3,7 @@ import React from "react";
 import "../css/home.css";
 
 const quizCategories = [
-  { title: "Genral", image:"/images/general.png", link: "/quiz/general" },
+  { title: "General", image:"/images/general.png", link: "/quiz/general" },
   { title: "Nature", image: "/images/nature.png", link: "/quiz/nature" },
   { title: "Science", image: "/images/science.png", link: "/quiz/science" },
   { title: "Technology", image: "/images/technology.png", link: "/quiz/technology" },
