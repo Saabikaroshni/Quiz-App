@@ -6,7 +6,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import General from './quiz/General';
 import Congratulations from './pages/Congratulations';
-
+import LevelCompletion from './pages/LevelCompletion';
 import Entertainment from './quiz/Entertainment';
 import History from './quiz/History';
 import Movie from './quiz/Movie';
@@ -33,6 +33,7 @@ const App = () => {
         <Route path="/" element={<Openpage/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/congratulations" element={<Congratulations/>}></Route>
+        <Route path="/level-completion" element={<LevelCompletion/>}></Route>
         <Route path="/quiz/nature" element={<Natures/>}></Route>
         <Route path="/quiz/science" element={<Science/>}></Route>
         <Route path="/quiz/technology" element={<Technology/>}></Route>

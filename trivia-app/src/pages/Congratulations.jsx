@@ -10,7 +10,7 @@ const Congratulations = () => {
   return (
     <div className="quiz-container">
       <h2>{message} 🎉</h2>
-      <h3>Your Final Score: {finalScore}/3</h3>
+     
       <button onClick={() => navigate("/home")}>Play Again</button>
     </div>
   );

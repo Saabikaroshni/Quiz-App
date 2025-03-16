@@ -76,3 +76,42 @@
     opacity: 0.6;
     cursor: not-allowed;
 }
+.level-up-message {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2F4F4F; /* Dark Slate Gray for text contrast */
+    background: linear-gradient(45deg, #FAEBD7, #5F9EA0); /* Antique White to Cadet Blue */
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 20px;
+    animation: bounceIn 0.8s ease-in-out, glowEffect 1.5s infinite alternate;
+    box-shadow: 0 0 12px rgba(95, 158, 160, 0.6);
+  }
+  
+  /* 🎉 Smooth Bounce In Animation */
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* ✨ Glowing Animation */
+  @keyframes glowEffect {
+    0% {
+      box-shadow: 0 0 10px rgba(95, 158, 160, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 20px rgba(95, 158, 160, 1);
+    }
+  }
+  
